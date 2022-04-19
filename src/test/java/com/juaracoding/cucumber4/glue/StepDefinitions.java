@@ -11,6 +11,7 @@ import com.juaracoding.cucumber4.config.AutomationFrameworkConfig;
 import com.juaracoding.cucumber4.drivers.DriverSingleton;
 import com.juaracoding.cucumber4.pages.Dashboard;
 import com.juaracoding.cucumber4.pages.LoginPage;
+import com.juaracoding.cucumber4.pages.Verifikasi;
 import com.juaracoding.cucumber4.pages.Wawancara;
 import com.juaracoding.cucumber4.utlis.ConfigurationProperties;
 import com.juaracoding.cucumber4.utlis.Constants;
@@ -39,6 +40,7 @@ public class StepDefinitions {
 	private LoginPage loginPage;
 	private Dashboard dashboard;
 	private Wawancara wawancara;
+	private Verifikasi verifikasi;
 	ExtentTest extentTest;
 	static ExtentReports reports = new ExtentReports("src/main/resources/TestReport.html");
 	
@@ -51,6 +53,7 @@ public class StepDefinitions {
 		loginPage = new LoginPage();
 		dashboard = new Dashboard();
 		wawancara = new Wawancara();
+		verifikasi = new Verifikasi();
 		TestCases[] tests = TestCases.values();
 		extentTest = reports.startTest(tests[Utils.testCount].getTestName());
 		Utils.testCount++;
@@ -135,6 +138,20 @@ public class StepDefinitions {
 	public void User_berhasil_menyimpan_data_wawancara() {
 		assertEquals(configurationProperties.getTxtVerifikasiData(), wawancara.getTxtVerifikasiData());
 		extentTest.log(LogStatus.PASS, "User berhasil menyimpan data wawancara");
+	}
+	
+	//=========================================================================================
+	
+	@When("User Menginput data pada form Verifikasi data")
+	public void User_Menginput_data_pada_form_Verifikasi_data() {
+		verifikasi.goToFormVerifikasi();
+		extentTest.log(LogStatus.PASS, "User Menginput data pada form Verifikasi data");
+	}
+	
+	@Then("User berhasil menyimpan data Verifikasi")
+	public void User_berhasil_menyimpan_data_Verifikasi() {
+		assertEquals(configurationProperties.getTxtJadwalTraining(), verifikasi.getTxtJadwalTraining());
+		extentTest.log(LogStatus.PASS, "User berhasil menyimpan data Verifikasi");
 	}
 	
 	

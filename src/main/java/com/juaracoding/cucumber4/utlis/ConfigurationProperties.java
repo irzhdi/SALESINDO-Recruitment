@@ -29,6 +29,10 @@ public class ConfigurationProperties {
 	@Value("${txtVerifikasiData}")
 	private String txtVerifikasiData;
 	
+	@Value("${txtJadwalTraining}")
+	private String txtJadwalTraining;
+	
+	
 	
 //===========================================================================================
 	public String getBrowser() {
@@ -57,4 +61,9 @@ public class ConfigurationProperties {
 	public String getTxtVerifikasiData() {
 		return txtVerifikasiData;
 	}
+	
+	public String getTxtJadwalTraining() {
+		return txtJadwalTraining;
+	}
+	
 }

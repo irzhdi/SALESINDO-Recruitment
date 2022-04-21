@@ -35,6 +35,9 @@ public class ConfigurationProperties {
 	@Value("${txtSukses}")
 	private String txtSukses;
 	
+	@Value("${txtGenerateCoding}")
+	private String txtGenerateCoding;
+	
 	
 //===========================================================================================
 	public String getBrowser() {
@@ -69,6 +72,10 @@ public class ConfigurationProperties {
 	}
 	public String getTxtSukses() {
 		return txtSukses;
+	}
+	
+	public String getTxtGenerateCoding() {
+		return txtGenerateCoding;
 	}
 	
 }

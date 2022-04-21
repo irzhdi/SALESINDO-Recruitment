@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 import com.juaracoding.SALESINDO.config.AutomationFrameworkConfig;
 import com.juaracoding.SALESINDO.drivers.DriverSingleton;
+import com.juaracoding.SALESINDO.pages.Coding;
 import com.juaracoding.SALESINDO.pages.Dashboard;
 import com.juaracoding.SALESINDO.pages.JadwalTraining;
 import com.juaracoding.SALESINDO.pages.LoginPage;
@@ -43,6 +44,7 @@ public class StepDefinitions {
 	private Wawancara wawancara;
 	private Verifikasi verifikasi;
 	private JadwalTraining jadwalTraining;
+	private Coding coding;
 	ExtentTest extentTest;
 	static ExtentReports reports = new ExtentReports("src/main/resources/TestReport.html");
 	
@@ -57,6 +59,7 @@ public class StepDefinitions {
 		wawancara = new Wawancara();
 		verifikasi = new Verifikasi();
 		jadwalTraining = new JadwalTraining();
+		coding = new Coding();
 		TestCases[] tests = TestCases.values();
 		extentTest = reports.startTest(tests[Utils.testCount].getTestName());
 		Utils.testCount++;
@@ -168,6 +171,20 @@ public class StepDefinitions {
 	public void User_berhasil_menyimpan_data_Report_Jadwal_Training() {
 		assertEquals(configurationProperties.getTxtSukses(), jadwalTraining.getTxtSukses());
 		extentTest.log(LogStatus.PASS, "User berhasil menyimpan data Report Jadwal Training");
+	}
+	
+	//=========================================================================================
+	
+	@When("User menginput data pada form Coding")
+	public void User_menginput_data_pada_form_Coding() {
+		coding.goToCoding();
+		extentTest.log(LogStatus.PASS, "User menginput data pada form Coding");
+	}
+	
+	@Then("User berhasil menyimpan data pada form Coding")
+	public void User_berhasil_menyimpan_data_pada_form_Coding() {
+		assertEquals(configurationProperties.getTxtGenerateCoding(), coding.getTxtGenerateCoding());
+		extentTest.log(LogStatus.PASS, "User berhasil menyimpan data pada form Coding");
 	}
 	
 	

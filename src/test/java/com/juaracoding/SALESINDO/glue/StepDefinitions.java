@@ -13,6 +13,7 @@ import com.juaracoding.SALESINDO.pages.Coding;
 import com.juaracoding.SALESINDO.pages.Dashboard;
 import com.juaracoding.SALESINDO.pages.JadwalTraining;
 import com.juaracoding.SALESINDO.pages.LoginPage;
+import com.juaracoding.SALESINDO.pages.Session;
 import com.juaracoding.SALESINDO.pages.Verifikasi;
 import com.juaracoding.SALESINDO.pages.Wawancara;
 import com.juaracoding.SALESINDO.utlis.ConfigurationProperties;
@@ -45,6 +46,7 @@ public class StepDefinitions {
 	private Verifikasi verifikasi;
 	private JadwalTraining jadwalTraining;
 	private Coding coding;
+	private Session session;
 	ExtentTest extentTest;
 	static ExtentReports reports = new ExtentReports("src/main/resources/TestReport.html");
 	
@@ -60,6 +62,7 @@ public class StepDefinitions {
 		verifikasi = new Verifikasi();
 		jadwalTraining = new JadwalTraining();
 		coding = new Coding();
+		session = new Session();
 		TestCases[] tests = TestCases.values();
 		extentTest = reports.startTest(tests[Utils.testCount].getTestName());
 		Utils.testCount++;
@@ -186,7 +189,23 @@ public class StepDefinitions {
 		assertEquals(configurationProperties.getTxtGenerateCoding(), coding.getTxtGenerateCoding());
 		extentTest.log(LogStatus.PASS, "User berhasil menyimpan data pada form Coding");
 	}
+	//=====================================================================================================
 	
+	@When("User mengakses menu session")
+	public void User_mengakses_menu_session() {
+		session.goToSession();
+		extentTest.log(LogStatus.PASS, "User mengakses menu session");
+	}
+	@And("User klik tombol force logout")
+	public void User_klik_tombol_force_logout() {
+		session.goToForceLogout();
+		extentTest.log(LogStatus.PASS, "User klik tombol force logout");
+	}
+	@Then("User berhasil keluar dari session")
+	public void User_berhasil_keluar_dari_session() {
+		assertEquals(configurationProperties.getTxtFormLogin(), session.getTxtFormLogin());
+		extentTest.log(LogStatus.PASS, "User berhasil keluar dari session");
+	}
 	
 	public void tunggu() {
 		try {

@@ -22,7 +22,7 @@ public class Coding {
 	@FindBy(xpath = "//table[@id='data-table-hrd']/tbody/tr/td")
 	WebElement btnPlus;
 	
-	@FindBy(xpath = "//table[@id='data-table-hrd']/tbody/tr[2]/td/ul/li/span[2]/a/i")
+	@FindBy(xpath = "xpath=//table[@id='data-table-hrd']/tbody/tr/td[11]/a/i")
 	WebElement btnAksi;
 	
 	@FindBy(xpath = "//div[@id='content']/div/div/div/div[2]/div/button")
@@ -62,9 +62,10 @@ public class Coding {
 	WebElement txtGenerateCoding;
 	
 	public void goToCoding() {
+		tunggu();
 		btnCoding.click();
-		btnPlus.click();
 		btnAksi.click();
+		tunggu();
 		btnEdit.click();
 		editPosition.click();
 		new Select(editPosition).selectByVisibleText("Team Leader");
@@ -80,6 +81,8 @@ public class Coding {
 		btnValid.click();
 		btnValid.sendKeys("confirm");
 		btnConfirm.click();
+		tunggu();
+	
 		
 	}
 		
@@ -87,6 +90,14 @@ public class Coding {
 			return txtGenerateCoding.getText();	
 		
 	}
+		public void tunggu() {
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	
 	
 }

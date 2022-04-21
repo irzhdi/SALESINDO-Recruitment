@@ -207,7 +207,7 @@ private WebDriver driver;
 		btnEcon.click();
 		btnData.click();
 		btnDok.click();
-	
+		tunggu();
 		btnTidak.click();
 		btnNorma.click();
 		btnCheck1.click();

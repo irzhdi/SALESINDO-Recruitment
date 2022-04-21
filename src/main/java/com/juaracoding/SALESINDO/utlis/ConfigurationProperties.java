@@ -38,6 +38,10 @@ public class ConfigurationProperties {
 	@Value("${txtGenerateCoding}")
 	private String txtGenerateCoding;
 	
+	@Value("${txtFormLogin}")
+	private String txtFormLogin;
+	
+	
 	
 //===========================================================================================
 	public String getBrowser() {
@@ -77,5 +81,9 @@ public class ConfigurationProperties {
 	public String getTxtGenerateCoding() {
 		return txtGenerateCoding;
 	}
+	public String getTxtFormLogin() {
+		return txtFormLogin;
+	}
+	
 	
 }

@@ -89,7 +89,6 @@ private WebDriver driver;
 	@FindBy(xpath = "//div[@id='alert']/strong")
 	WebElement txtSukses;
 	
-	
 	public void goToMenuJadwalTraining() {
 		klikEmployee.click();
 		inputEmployee.sendKeys("pkwt");

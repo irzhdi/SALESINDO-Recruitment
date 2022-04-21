@@ -7,7 +7,8 @@ public enum TestCases {
 	T3("Testing menu Wawancara"),
 	T4("Testing Menu Verifikasi"),
 	T5("Testing Menu Jadwal Training"),
-	T6("Testing Menu Coding");
+	T6("Testing Menu Coding"),
+	T7("Testing Menu Session");
 	
 	private String testName;
 	

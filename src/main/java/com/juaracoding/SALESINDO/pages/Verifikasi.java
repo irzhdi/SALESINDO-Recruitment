@@ -208,6 +208,7 @@ private WebDriver driver;
 		inputsmCode.sendKeys(Keys.ENTER);
 		tunggu();
 		btnUpdate.click();
+		scroll();
 		tunggu();
 		btnTelp.click();
 		btnEcon.click();
@@ -246,6 +247,6 @@ private WebDriver driver;
 	}
 	public void scroll() {
 		JavascriptExecutor je = (JavascriptExecutor) driver;
-		je.executeScript("window.scrollBy(0,300)");
+		je.executeScript("window.scrollBy(0,-200)");
 	}
 }

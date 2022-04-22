@@ -97,47 +97,47 @@ public class Coding {
 		tunggu();
 		btnPlus.click();
 		btnAksi1.click();
-		tunggu();
-		btnEdit.click();
-		tunggu();
-		editDivision.click();
-		new Select(editDivision).selectByVisibleText("Operational");
-		
-		editDepartement.click();
-		new Select(editDepartement).selectByVisibleText("Finance");
-		
-		editBranch.click();
-		new Select(editBranch).selectByVisibleText("BANDUNG");
-		
-		editPosition.click();
-		new Select(editPosition).selectByVisibleText("Team Leader");
-		
-		editEmployee_Type.click();
-		new Select(editEmployee_Type).selectByVisibleText("PKWT");
-		
-		editChannel.click();
-		new Select(editChannel).selectByVisibleText("Pemol");
-		
-		editGroup_Type.click();
-		new Select(editGroup_Type).selectByVisibleText("Retail");
-		
-		editLevel.click();
-		new Select(editLevel).selectByVisibleText("Classy");
-		
-		editProduct.click();
-		new Select(editProduct).selectByVisibleText("CC");
-		
-		editSales_Mode.click();
-		new Select(editSales_Mode).selectByVisibleText("Direct Sales");
-		
-		
-		editSM_Code.click();
-		new Select(editSM_Code).selectByVisibleText("S1220401002 JULIANSAH");
-		
-		editBSH.click();
-		new Select(editBSH).selectByVisibleText("SANTI WIDYAWATIK");
-		tunggu();
-		btnUpdate.click();
+//		tunggu();
+//		btnEdit.click();
+//		tunggu();
+//		editDivision.click();
+//		new Select(editDivision).selectByVisibleText("Operational");
+//		
+//		editDepartement.click();
+//		new Select(editDepartement).selectByVisibleText("Finance");
+//		
+//		editBranch.click();
+//		new Select(editBranch).selectByVisibleText("BANDUNG");
+//		
+//		editPosition.click();
+//		new Select(editPosition).selectByVisibleText("Team Leader");
+//		
+//		editEmployee_Type.click();
+//		new Select(editEmployee_Type).selectByVisibleText("PKWT");
+//		
+//		editChannel.click();
+//		new Select(editChannel).selectByVisibleText("Pemol");
+//		
+//		editGroup_Type.click();
+//		new Select(editGroup_Type).selectByVisibleText("Retail");
+//		
+//		editLevel.click();
+//		new Select(editLevel).selectByVisibleText("Classy");
+//		
+//		editProduct.click();
+//		new Select(editProduct).selectByVisibleText("CC");
+//		
+//		editSales_Mode.click();
+//		new Select(editSales_Mode).selectByVisibleText("Direct Sales");
+//		
+//		
+//		editSM_Code.click();
+//		new Select(editSM_Code).selectByVisibleText("S1220401002 JULIANSAH");
+//		
+//		editBSH.click();
+//		new Select(editBSH).selectByVisibleText("SANTI WIDYAWATIK");
+//		tunggu();
+//		btnUpdate.click();
 		tunggu();
 		btnCheckId.click();
 		btnCheck1.click();

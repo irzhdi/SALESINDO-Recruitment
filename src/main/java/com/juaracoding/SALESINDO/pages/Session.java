@@ -29,7 +29,7 @@ public class Session {
 	@FindBy(xpath = "//*[@id=\"data-table-session\"]/tbody/tr/td[5]/a/i")
 	WebElement klikForce;
 	
-	@FindBy(xpath = "(.//*[normalize-space(text()) and normalize-space(.)='x'])[1]/preceding::span[5]")
+	@FindBy(css = "body > div > div > div > form > span")
 	WebElement txtFormLogin;
 	
 	@FindBy(xpath = "//body")
@@ -44,6 +44,7 @@ public class Session {
 		klikForce.click();
 		tunggu();
 		enter();
+		tunggu();
 		tunggu();
 		
 		

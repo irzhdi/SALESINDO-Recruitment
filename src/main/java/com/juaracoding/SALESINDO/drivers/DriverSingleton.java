@@ -1,5 +1,6 @@
 package com.juaracoding.SALESINDO.drivers;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -16,7 +17,7 @@ public class DriverSingleton {
     public WebDriver instantiate(String strategy){
         DriverStrategy driverStrategy = DriverStrategyImplementator.chooseStrategy(strategy);
         driver = driverStrategy.setStrategy();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
 
         return driver;

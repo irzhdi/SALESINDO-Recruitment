@@ -1,5 +1,6 @@
 package com.juaracoding.SALESINDO.pages;
 
+import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
@@ -25,7 +26,7 @@ public class Session {
 	@FindBy(xpath = "//div[@id='sidebar']/div/div/ul[2]/li[5]/a/span")
 	WebElement klikSession;
 	
-	@FindBy(xpath = "//table[@id='data-table-session']/tbody/tr/td[5]/a/i")
+	@FindBy(xpath = "//*[@id=\"data-table-session\"]/tbody/tr/td[5]/a/i")
 	WebElement klikForce;
 	
 	@FindBy(xpath = "(.//*[normalize-space(text()) and normalize-space(.)='x'])[1]/preceding::span[5]")
@@ -36,11 +37,15 @@ public class Session {
 	
 	public void goToSession() {
 		klikSession.click();
+		tunggu();
 		
 	}
 	public void goToForceLogout() {
 		klikForce.click();
-		body.sendKeys(Keys.ENTER);
+		tunggu();
+		enter();
+		tunggu();
+		
 		
 	}
 	public String getTxtFormLogin() {
@@ -55,8 +60,20 @@ public class Session {
 			e.printStackTrace();
 		}
 	}
-
+	public void enter() {
+		 try
+		    {
+			 Robot r = new Robot();
+			 r.keyPress(KeyEvent.VK_ENTER);
+			 r.keyRelease(KeyEvent.VK_ENTER);  
+		    }
+		    catch (AWTException e)
+		    {
+		    e.printStackTrace();
+		    }
+		}
+	}
 
 	
 	
-}
+

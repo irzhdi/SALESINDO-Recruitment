@@ -103,6 +103,12 @@ private WebDriver driver;
 	@FindBy(id = "btnUpdate")
 	WebElement btnUpdate;
 	
+	@FindBy(xpath = "//*[@id=\"fileupload\"]/div/table/tbody/tr[1]/td[4]/a/i")
+	WebElement klikMinimize; 
+	
+	@FindBy(xpath = "//*[@id=\"fileupload\"]/div/div[4]/span/a")
+	WebElement klikBack; 
+	
 	@FindBy(xpath="//*[@id=\"form_verification\"]/div[3]/div/table/tbody/tr[1]/td/input")
 	WebElement btnTelp;
 	
@@ -182,7 +188,6 @@ private WebDriver driver;
 		klikGrup.click();
 		inputGrup.sendKeys("flazz");
 		inputGrup.sendKeys(Keys.ENTER);
-		tunggu();
 		klikLevel.click();
 		inputLevel.sendKeys("junior");
 		inputLevel.sendKeys(Keys.ENTER);
@@ -201,6 +206,7 @@ private WebDriver driver;
 		kliksmCode.click();
 		inputsmCode.sendKeys("elva");
 		inputsmCode.sendKeys(Keys.ENTER);
+		tunggu();
 		btnUpdate.click();
 		tunggu();
 		btnTelp.click();
@@ -209,6 +215,7 @@ private WebDriver driver;
 		btnDok.click();
 		tunggu();
 		btnTidak.click();
+		tunggu();
 		btnNorma.click();
 		btnCheck1.click();
 		btnCheck2.click();
@@ -234,7 +241,6 @@ private WebDriver driver;
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

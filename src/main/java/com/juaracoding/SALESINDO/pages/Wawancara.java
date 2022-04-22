@@ -27,18 +27,15 @@ public class Wawancara {
 	@FindBy(xpath = "//div[@id='sidebar']/div/div/ul[2]/li[3]/ul/li/a/span")
 	WebElement btnWawancara;
 	
-//	@FindBy(xpath = "//div[@id='sidebar']/div/div/ul[2]/li[3]/a/span")
-//	WebElement btn1;
-//	
-//	@FindBy(xpath = "//div[@id='sidebar']/div/div/ul[2]/li[3]/ul/li/a/span")
-//	WebElement btn2;
-	
-	@FindBy(xpath = "//table[@id='data-table-rto']/tbody/tr/td")
+	@FindBy(css = "#data-table-rto > tbody > tr:nth-child(1) > td:nth-child(1)")
 	WebElement btnPlus;
 	
+	@FindBy(xpath = "//*[@id=\"data-table-rto\"]/tbody/tr[2]/td/ul/li/span[2]/a/i")
+	WebElement btnAksi1;
+	
 	@FindBy(xpath = "//*[@id=\"data-table-rto\"]/tbody/tr[1]/td[8]/a/i")
-	WebElement btnAksi;
-	//table[@id='data-table-rto']/tbody/tr[2]/td/ul/li/span[2]/a/i
+	WebElement btnAksi2;
+	
 	@FindBy(id = "select2-Division-container")
 	WebElement klikDivisi;
 	
@@ -136,7 +133,10 @@ public class Wawancara {
 //		tunggu();
 //	}
 	public void goToButtonAksi() {
-		btnAksi.click();
+		tunggu();
+		btnPlus.click();
+		btnAksi1.click();
+//		btnAksi2.click();
 		tunggu();
 	}
 	public void goToFormWawancara() {
